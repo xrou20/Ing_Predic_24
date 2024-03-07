@@ -1,0 +1,817 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
+    
+    
+      
+        <title>Mi Primer Programa - Ingenieria Predictiva</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5 1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5 14 11H6v2Z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mi-primer-programa" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="Ingenieria Predictiva" class="md-header__button md-logo" aria-label="Ingenieria Predictiva" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ingenieria Predictiva
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mi Primer Programa
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo Nocturno"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Nocturno" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Ingenieria Predictiva" class="md-nav__button md-logo" aria-label="Ingenieria Predictiva" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Ingenieria Predictiva
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curso Ingeniería Predictiva
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Curso Ingeniería Predictiva
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modulo 01
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modulo 01
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1" id="__nav_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introducción a Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción a Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_1_1_Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#crear-programas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear Programas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejecuta-el-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecuta el Programa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comentarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#palabras-reservadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Palabras Reservadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formato-de-salida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato de salida
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indentación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indentando-adecuadamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indentando adecuadamente
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condicionales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imprimir-en-pantalla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imprimir en pantalla
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingreso-de-valores-por-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingreso de valores por teclado
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mi-primer-programa">Mi Primer Programa</h1>
+<h2 id="crear-programas">Crear Programas</h2>
+<p>Los programas se guardan en archivos <code>.py</code>.</p>
+<div class="highlight"><pre><span></span><code># hello.py
+print(&#39;hello world&#39;)
+</code></pre></div>
+<h2 id="ejecuta-el-programa">Ejecuta el Programa</h2>
+<p><strong>Paso 1</strong> - Escribe el programa en un editor de texto, usando la siguiente línea:</p>
+<p><strong>Ejemplo:</strong></p>
+<blockquote>
+<p>Una mañana ponés un billete en la vereda al lado del obelisco porteño. A partir de ahí, cada día vas y duplicás la cantidad de billetes, apilándolos prolijamente. ¿Cuánto tiempo pasa antes de que la pila de billetes sea más alta que el obelisco?</p>
+</blockquote>
+<p>Solución:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># obelisco.py</span>
+<span class="n">grosor_billete</span> <span class="o">=</span> <span class="mf">0.11</span> <span class="o">*</span> <span class="mf">0.001</span>  <span class="c1"># grosor de un billete en metros</span>
+<span class="n">altura_obelisco</span> <span class="o">=</span> <span class="mf">67.5</span>         <span class="c1"># altura en metros</span>
+<span class="n">num_billetes</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">dia</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span> <span class="o">&lt;=</span> <span class="n">altura_obelisco</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dia</span><span class="p">,</span> <span class="n">num_billetes</span><span class="p">,</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span><span class="p">)</span>
+    <span class="n">dia</span> <span class="o">=</span> <span class="n">dia</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">num_billetes</span> <span class="o">=</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dia</span><span class="p">,</span> <span class="n">num_billetes</span><span class="p">,</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cantidad de días&#39;</span><span class="p">,</span> <span class="n">dia</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cantidad de billetes&#39;</span><span class="p">,</span> <span class="n">num_billetes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Altura final&#39;</span><span class="p">,</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Paso 2</strong> -  Guarde el programa en un archivo, Ejemplo: <code>Billete_Torre.py</code>
+(<code>.py</code> significa archivo Python);</p>
+<p><strong>Paso 3</strong> - Abra una terminal (linux, mac) o símbolo del sistema (CMD de Windows) y vaya a la carpeta donde guardó el archivo;</p>
+<p><strong>Paso 4</strong> - Ejecute el programa:</p>
+<p><div class="highlight"><pre><span></span><code>C:\Users\Usuario&gt; python Billete_Torre..py
+</code></pre></div>
+La salida por el terminal será la siguiente:</p>
+<div class="highlight"><pre><span></span><code>C:\Users\Usuario&gt; python obelisco.py
+C:\Users\Usuario&gt; python obelisco.py
+1 1 0.00011
+2 2 0.00022
+3 4 0.00044
+4 8 0.00088
+5 16 0.00176
+6 32 0.00352
+...
+19 262144 28.83584
+20 524288 57.67168
+21 1048576 115.34336
+Cantidad de días 21
+Cantidad de billetes 1048576
+Altura final 115.34336
+</code></pre></div>
+<hr />
+<div class="admonition note annotate">
+<p class="admonition-title">GOOGLE COLAB</p>
+<p>Es hora de usar  <a href="https://colab.research.google.com/">GOOGLE COLAB</a></p>
+</div>
+<h2 id="comandos">Comandos</h2>
+<p>Escribe la siguiente secuencia de comandos:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">+</span> <span class="mi">15</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+<p>Cada línea se va ejecutando secuencialmente.</p>
+<h2 id="comentarios">Comentarios</h2>
+<p>es una o varias lineas que no se ejecutaran:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">+</span> <span class="mi">15</span>
+<span class="c1"># Esto es un comentario</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="variables">Variables</h2>
+<p>Una variable se refiere a un valor y se identifica mediante un nombre compuesto por letras (mayúsculas o minúsculas) de la a a la z. Puede contener el guión bajo y permitir el uso de números, siempre y cuando no sean el primer carácter.</p>
+<div class="highlight"><pre><span></span><code>altura = 442 # válido
+_altura = 442 # válido
+altura2 = 442 # válido
+2altura = 442 # inválido
+</code></pre></div>
+<h2 id="tipos">Tipos</h2>
+<p>El tipo de las variables no debe ser declarado como en otros lenguajes</p>
+<div class="highlight"><pre><span></span><code>altura = 442           # Entero
+altura = 442.0         # Punto flotante
+altura = &#39;Muy, muy alto&#39; # Cadena de caracteres
+</code></pre></div>
+<p>Python distingue mayúsculas y minúsculas</p>
+<div class="highlight"><pre><span></span><code>nombre = &#39;David&#39;
+Nombre = &#39;Diego&#39;
+NOMBRE = &#39;Rosita&#39;
+</code></pre></div>
+<hr />
+<h2 id="palabras-reservadas">Palabras Reservadas</h2>
+<p>Algunas palabras en inglés están reservadas para el uso de Python. Ciertas palabras tienen un significado especial en Python y no pueden usarse como nombres de variables.</p>
+<div class="highlight"><pre><span></span><code>and, as, assert, break, class, continue, def, del, elif, else,  
+except, exec, finally, for, from, global, if, import, in, is,  
+lambda, not, or, pass, print, raise, return, try, with, while, yield.
+</code></pre></div>
+<h2 id="formato-de-salida">Formato de salida</h2>
+<div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.2342</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tiempo t=</span><span class="si">%g</span><span class="s1"> s, y Altura </span><span class="si">%.2f</span><span class="s1"> m.&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</code></pre></div>
+<p>Ejemplos de diferentes formatos:</p>
+<div class="highlight"><pre><span></span><code>%g         #formato más compacto de un número real
+%f         #notación decimal (-34,674)
+%10.3f     #notación decimal con 3 decimales y 10 dígitos enteros
+%.3f       #notación decimal con 3 decimales y tamaño mínimo
+%e         #notación científica (1.42e-02 o 1.42E-02)
+%E         #notación científica (1.42e-02 o 1.42E-02)
+%9.2e      #notación científica con 2 decimales y 9 dígitos enteros
+%d         #entero
+%5d        #entero de 5 dígitos
+%s         #string (texto)
+%-20s      #string, con 20 caracteres, alineado a la izquierda
+%%         #símbolo de porcentaje %
+</code></pre></div>
+<p>Si se requiere una salida más completa, se pueden usar textos (cadenas) con comillas triples (""" o ''') para la salida en múltiples líneas:</p>
+<div class="highlight"><pre><span></span><code><span class="n">v0</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">v0</span><span class="o">*</span><span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">En t=</span><span class="si">%f</span><span class="s2"> s, una pelota con</span>
+<span class="s2">velocidad inicial v0=</span><span class="si">%.3E</span><span class="s2"> m/s</span>
+<span class="s2">está situado a una altura de </span><span class="si">%.2f</span><span class="s2"> m.</span>
+<span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</code></pre></div>
+<hr />
+<h2 id="indentacion">Indentación</h2>
+<p>La indentación se usa para marcar grupos de comandos que van juntos.
+Considerá el ejemplo anterior:</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span> <span class="o">&lt;=</span> <span class="n">altura_obelisco</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dia</span><span class="p">,</span> <span class="n">num_billetes</span><span class="p">,</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span><span class="p">)</span>
+    <span class="n">dia</span> <span class="o">=</span> <span class="n">dia</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">num_billetes</span> <span class="o">=</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cantidad de días&#39;</span><span class="p">,</span> <span class="n">dia</span><span class="p">)</span>
+</code></pre></div>
+<p>La indentación agrupa los comandos siguientes como las operaciones a repetir:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nb">print</span><span class="p">(</span><span class="n">dia</span><span class="p">,</span> <span class="n">num_billetes</span><span class="p">,</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span><span class="p">)</span>
+    <span class="n">dia</span> <span class="o">=</span> <span class="n">dia</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">num_billetes</span> <span class="o">=</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div>
+<p>Como el comando  <code>print()</code> del final no está indentado, no pertenece al ciclo. La línea en blanco que dejamos entre ambos solo está para facilitar la lectura y no afecta la ejecución.</p>
+<h2 id="indentando-adecuadamente">Indentando adecuadamente</h2>
+<p>Algunas recomendaciones sobre cómo indentar:</p>
+<ul>
+<li>Usá espacios y no el tabulador.</li>
+<li>Usá 4 espacios por cada nivel.</li>
+<li>Usá un editor de textos que entienda que estás escribiendo en Python.</li>
+</ul>
+<p>El único requisito del intérprete de Python es que la indentación dentro de un mismo bloque sea consistente. Por ejemplo, esto es un error:</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span> <span class="o">&lt;=</span> <span class="n">altura_obelisco</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dia</span><span class="p">,</span> <span class="n">num_billetes</span><span class="p">,</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="n">grosor_billete</span><span class="p">)</span>
+        <span class="n">dia</span> <span class="o">=</span> <span class="n">dia</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># ERROR</span>
+    <span class="n">num_billetes</span> <span class="o">=</span> <span class="n">num_billetes</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div>
+<h2 id="condicionales">Condicionales</h2>
+<p>El comando <code>if</code> es usado para ejecutar un condicional:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gana a&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gana b&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Puedes verificar condiciones mutuamente excluyentes agregando condiciones extras con <code>elif</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gana a&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Empate!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gana b&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>El comando <code>elif</code> viene de <em>else, if</em> y puede traducirse como "si no se da la condición del <em>if</em> anterior, verificá si se da la siguiente".</p>
+<h2 id="imprimir-en-pantalla">Imprimir en pantalla</h2>
+<p>Puedes imprimir variables. El texto impreso en ese caso será el valor de la variable y no su nombre.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># imprime el texto &#39;100&#39;</span>
+</code></pre></div>
+<p>Si le pasás más de un valor al <code>print</code> los separa con espacios.</p>
+<div class="highlight"><pre><span></span><code><span class="n">nombre</span> <span class="o">=</span> <span class="s1">&#39;Juana&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mi nombre es&#39;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)</span> <span class="c1"># Imprime el texto &#39;Mi nombre es Juana&#39;</span>
+</code></pre></div>
+<p><code>print()</code> siempre termina la línea impresa pasando a la siguiente.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mi nombre es&#39;</span><span class="p">,</span> <span class="s1">&#39;Juana&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Esto imprime:</p>
+<div class="highlight"><pre><span></span><code>Hola
+Mi nombre es Juana
+</code></pre></div>
+<p>El salto de línea entre ambos comandos puede ser suprimido:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mi nombre es&#39;</span><span class="p">,</span> <span class="s1">&#39;Juana&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Este código va a imprimir:</p>
+<div class="highlight"><pre><span></span><code>Hola Mi nombre es Juana
+</code></pre></div>
+<h2 id="ingreso-de-valores-por-teclado">Ingreso de valores por teclado</h2>
+<p>Para leer un valor ingresado por el usuario, usá la función <code>input()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Ingresá tu nombre:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tu nombre es&#39;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)</span>
+</code></pre></div>
+<p><code>input</code> imprime el texto que le pases como parámetro y espera una respuesta. Es útil para programas pequeños, para hacer ejercicios o para debuguear un código. Casi no se lo usa en programas reales.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
