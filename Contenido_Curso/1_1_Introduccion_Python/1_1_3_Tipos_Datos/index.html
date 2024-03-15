@@ -1110,9 +1110,9 @@ x != y     No igual a
 El significado de los códigos lo veremos más adelante.</p>
 <hr />
 <h2 id="listas">Listas</h2>
-<p>En esta sección estudiaremos listas que es el tipo de datos primitivo de Python para guardar colecciones ordenadas de valores. En <a href="https://youtu.be/h3GN0-rAsss">este video</a> introducimos el tema.</p>
+<p>En esta sección estudiaremos listas que es el tipo de datos primitivo de Python para guardar colecciones ordenadas de valores. </p>
 <h3 id="creacion-de-listas">Creación de Listas</h3>
-<p>Usá corchetes para definir una lista:</p>
+<p>Usa corchetes para definir una lista:</p>
 <div class="highlight"><pre><span></span><code><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Rosita&#39;</span><span class="p">,</span> <span class="s1">&#39;Manuel&#39;</span><span class="p">,</span> <span class="s1">&#39;Luciana&#39;</span> <span class="p">]</span>
 <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">111</span><span class="p">]</span>
 </code></pre></div>
@@ -1175,7 +1175,7 @@ El significado de los códigos lo veremos más adelante.</p>
 </code></pre></div>
 <p>Si el elemento está presente en más de una posición, <code>index()</code> te va a devolver el índice de la primera aparición. Si el elemento no está en la lista se va a generar una excepción de tipo <code>ValueError</code>.</p>
 <h3 id="borrar-elementos">Borrar elementos</h3>
-<p>Podés borrar elementos de una lista tanto usando el valor del elemento como su posición:</p>
+<p>Puedes borrar elementos de una lista tanto usando el valor del elemento como su posición:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Usando el valor</span>
 <span class="n">nombres</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Luciana&#39;</span><span class="p">)</span>
 
@@ -1196,7 +1196,7 @@ El significado de los códigos lo veremos más adelante.</p>
 <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;spam&#39;</span><span class="p">]</span>
 <span class="n">s</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>                    <span class="c1"># [&#39;bar&#39;, &#39;foo&#39;, &#39;spam&#39;]</span>
 </code></pre></div>
-<p>Usá <code>sorted()</code> si querés generar una nueva lista ordenada en lugar de ordenar la misma:</p>
+<p>Usa <code>sorted()</code> si querés generar una nueva lista ordenada en lugar de ordenar la misma:</p>
 <div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>               <span class="c1"># s queda igual, t guarda los valores ordenados</span>
 </code></pre></div>
 <h3 id="listas-y-matematica">Listas y matemática</h3>
@@ -1208,6 +1208,41 @@ El significado de los códigos lo veremos más adelante.</p>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
 </code></pre></div>
 <p>Específicamente, las listas no representan vectores ni matrices como en MATLAB, Octave, R, etc. Sin embargo, hay paquetes de Python que hacen muy bien ese trabajo (por ejemplo <a href="https://numpy.org">numpy</a>).</p>
+<h1 id="ejercicios"><strong>EJERCICIOS</strong></h1>
+<h2 id="ejercicio-01"><strong>Ejercicio 01</strong></h2>
+<blockquote>
+<p>Se requiere calcular cuantos viajes debe hacer un volquete para remover un desmonte, la cual se dispone de un volquete de 5m3. Se solicita hacer un programa que nos permita calcular lo requerido. 
+</p>
+</blockquote>
+<hr />
+<h2 id="ejercicio-02"><strong>Ejercicio 02</strong></h2>
+<blockquote>
+<p>Escribe un programa que calcule el área de un rombo, considerando que tiene sus 4 lados iguales, siguiendo las siguientes formulas:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code> A = 0.5 * Diagonal_Mayor * Diagonal_Menor
+
+ P = 4 * Lado
+</code></pre></div>
+<hr />
+<h2 id="ejercicio-03"><strong>Ejercicio 03</strong></h2>
+<blockquote>
+<p>La casa de cambio “PeruX” realiza operaciones en soles y en dólares, se requiere un programa que permita realizar la conversión de soles a dólares.</p>
+</blockquote>
+<hr />
+<h2 id="ejercicio-04"><strong>Ejercicio 04</strong></h2>
+<blockquote>
+<p>Escribir un programa que pida al usuario su peso (en kg) y estatura (en metros), calcule el índice de masa corporal y lo almacene en una variable, y muestre por pantalla la frase <code>Tu índice de masa corporal es</code> <code>imc</code> donde <code>imc</code> es el índice de masa corporal calculado redondeado con dos decimales.</p>
+</blockquote>
+<hr />
+<h2 id="ejercicio-05"><strong>Ejercicio 05</strong></h2>
+<blockquote>
+<p>Escribir un programa que convierta un valor dado en grados Fahrenheit a grados Celsius.</p>
+</blockquote>
+<hr />
+<h2 id="ejercicio-06"><strong>Ejercicio 06</strong></h2>
+<blockquote>
+<p>Escribir un programa que calcule la altura máxima, usando la formula de lanzamiento vertical.</p>
+</blockquote>
 
 
 
