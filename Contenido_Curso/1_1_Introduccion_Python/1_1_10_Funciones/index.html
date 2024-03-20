@@ -712,7 +712,23 @@
 <p>A medida que tus programas se vuelven más largos y complejos, vas a necesitar organizarte. En esta sección vamos a introducir brevemente funciones y módulos de la biblioteca.</p>
 <h2 id="funciones-a-medida">Funciones a medida</h2>
 <p>Usa funciones para encapsular código que quieras reutilizar. El siguiente ejemplo muestra una definición de una función:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sumcount</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># EJEMPLO 01</span>
+<span class="k">def</span> <span class="nf">sumar</span><span class="p">(</span><span class="n">Numero_01</span><span class="p">,</span> <span class="n">Numero_02</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función calcula la suma de dos números positivos.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        Numero_01 (int): Primer número positivo.</span>
+<span class="sd">        Numero_02 (int): Segundo número positivo.</span>
+<span class="sd">    Retorna:</span>
+<span class="sd">        int: La suma de dos números enteros positivos.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Suma</span> <span class="o">=</span>  <span class="n">Numero_01</span> <span class="o">+</span> <span class="n">Numero_02</span>
+    <span class="k">return</span> <span class="n">Suma</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># EJEMPLO 02</span>
+<span class="k">def</span> <span class="nf">sumcount</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Esta función calcula la suma de todos los números enteros positivos</span>
 <span class="sd">    desde 1 hasta el número dado &#39;n&#39;.</span>
@@ -731,7 +747,11 @@
     <span class="k">return</span> <span class="n">total</span>
 </code></pre></div>
 <p>Para llamar a una función:</p>
-<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">sumcount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">Sumar_Numeros</span> <span class="o">=</span> <span class="n">sumar</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Sumar_Numeros</span><span class="p">)</span>
+
+<span class="n">Suma_Enteros</span> <span class="o">=</span> <span class="n">sumcount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Suma_Enteros</span><span class="p">)</span>
 </code></pre></div>
 <p>Una función es una serie de instrucciones que realiza una tarea y devuelve un resultado. La palabra  <code>return</code> es necesaria para explicitar el valor de retorno de la función.</p>
 <h2 id="funciones-de-la-biblioteca">Funciones de la biblioteca</h2>
